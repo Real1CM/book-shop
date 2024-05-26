@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.book.shop.dao.ShangpinchimaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.book.shop.entity.ShangpinchimaEntity" id="shangpinchimaMap">
+        <result property="chima" column="chima"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.book.shop.entity.vo.ShangpinchimaVO" >
+		SELECT * FROM shangpinchima  shangpinchima
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+	<select id="selectVO"
+		resultType="com.book.shop.entity.vo.ShangpinchimaVO" >
+		SELECT  shangpinchima.* FROM shangpinchima  shangpinchima
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.book.shop.entity.view.ShangpinchimaView" >
+
+		SELECT  shangpinchima.* FROM shangpinchima  shangpinchima
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+	<select id="selectView"
+		resultType="com.book.shop.entity.view.ShangpinchimaView" >
+		SELECT * FROM shangpinchima  shangpinchima <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+
+</mapper>
